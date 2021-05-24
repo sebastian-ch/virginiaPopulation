@@ -285,7 +285,7 @@ function App() {
           <b><h3>Map Currently Showing {title} </h3></b><br></br>
           County Name: {countyName} <br></br>
           Population 2020: {vpop2020} <br></br>
-          Population 2020: {vpop2010} <br></br>
+          Population 2010: {vpop2010} <br></br>
           Population Change: {vpopChange} <br></br>
           <div className='allButtons'>
             <button onClick={pop2020} className='button'>Population in 2020</button> <br></br>
