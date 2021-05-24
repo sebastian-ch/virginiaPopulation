@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/sebastian-ch.github.io/virginiaPopulation/static/css/main.25c6ba4f.chunk.css",
-    "main.js": "/sebastian-ch.github.io/virginiaPopulation/static/js/main.513cabea.chunk.js",
-    "main.js.map": "/sebastian-ch.github.io/virginiaPopulation/static/js/main.513cabea.chunk.js.map",
-    "runtime-main.js": "/sebastian-ch.github.io/virginiaPopulation/static/js/runtime-main.98166122.js",
-    "runtime-main.js.map": "/sebastian-ch.github.io/virginiaPopulation/static/js/runtime-main.98166122.js.map",
-    "static/css/2.19072978.chunk.css": "/sebastian-ch.github.io/virginiaPopulation/static/css/2.19072978.chunk.css",
-    "static/js/2.0443b0ba.chunk.js": "/sebastian-ch.github.io/virginiaPopulation/static/js/2.0443b0ba.chunk.js",
-    "static/js/2.0443b0ba.chunk.js.map": "/sebastian-ch.github.io/virginiaPopulation/static/js/2.0443b0ba.chunk.js.map",
-    "index.html": "/sebastian-ch.github.io/virginiaPopulation/index.html",
-    "static/css/2.19072978.chunk.css.map": "/sebastian-ch.github.io/virginiaPopulation/static/css/2.19072978.chunk.css.map",
-    "static/css/main.25c6ba4f.chunk.css.map": "/sebastian-ch.github.io/virginiaPopulation/static/css/main.25c6ba4f.chunk.css.map",
-    "static/js/2.0443b0ba.chunk.js.LICENSE.txt": "/sebastian-ch.github.io/virginiaPopulation/static/js/2.0443b0ba.chunk.js.LICENSE.txt",
-    "static/media/dissolve.9bfcdcb1.geojson": "/sebastian-ch.github.io/virginiaPopulation/static/media/dissolve.9bfcdcb1.geojson",
-    "static/media/vaNum.11b4230b.geojson": "/sebastian-ch.github.io/virginiaPopulation/static/media/vaNum.11b4230b.geojson"
+    "main.css": "/virginiaPopulation/static/css/main.25c6ba4f.chunk.css",
+    "main.js": "/virginiaPopulation/static/js/main.513cabea.chunk.js",
+    "main.js.map": "/virginiaPopulation/static/js/main.513cabea.chunk.js.map",
+    "runtime-main.js": "/virginiaPopulation/static/js/runtime-main.01ccf544.js",
+    "runtime-main.js.map": "/virginiaPopulation/static/js/runtime-main.01ccf544.js.map",
+    "static/css/2.19072978.chunk.css": "/virginiaPopulation/static/css/2.19072978.chunk.css",
+    "static/js/2.cf701df4.chunk.js": "/virginiaPopulation/static/js/2.cf701df4.chunk.js",
+    "static/js/2.cf701df4.chunk.js.map": "/virginiaPopulation/static/js/2.cf701df4.chunk.js.map",
+    "index.html": "/virginiaPopulation/index.html",
+    "static/css/2.19072978.chunk.css.map": "/virginiaPopulation/static/css/2.19072978.chunk.css.map",
+    "static/css/main.25c6ba4f.chunk.css.map": "/virginiaPopulation/static/css/main.25c6ba4f.chunk.css.map",
+    "static/js/2.cf701df4.chunk.js.LICENSE.txt": "/virginiaPopulation/static/js/2.cf701df4.chunk.js.LICENSE.txt",
+    "static/media/dissolve.9bfcdcb1.geojson": "/virginiaPopulation/static/media/dissolve.9bfcdcb1.geojson",
+    "static/media/vaNum.11b4230b.geojson": "/virginiaPopulation/static/media/vaNum.11b4230b.geojson"
   },
   "entrypoints": [
-    "static/js/runtime-main.98166122.js",
+    "static/js/runtime-main.01ccf544.js",
     "static/css/2.19072978.chunk.css",
-    "static/js/2.0443b0ba.chunk.js",
+    "static/js/2.cf701df4.chunk.js",
     "static/css/main.25c6ba4f.chunk.css",
     "static/js/main.513cabea.chunk.js"
   ]
