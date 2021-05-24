@@ -17,6 +17,11 @@ function App() {
   const [zoom, setZoom] = useState(6.5);
   const [countyName, setCountyName] = useState();
   const [title, setTitle] = useState('Population in 2020');
+  const [vpop2020, setPop2020] = useState()
+  const [vpop2010, setPop2010] = useState()
+  const [vpopChange, setPopChange] = useState()
+
+  var id;
   
 
   useEffect(() => {
@@ -34,8 +39,11 @@ function App() {
 
     map.current.on('load', () => {
 
+
+
+
+      //find the first symbol layer so I can put the geojson's under its
       const layers = map.current.getStyle().layers;
-      // Find the index of the first symbol layer in the map style
       var firstSymbolId;
         for (var i = 0; i < layers.length; i++) {
           if (layers[i].type === 'symbol') {
@@ -44,6 +52,9 @@ function App() {
           }
       }
 
+
+      //add the mask layer
+      //slightly unnecessary, but I wanted to play with turf mask and it's really cool!
       fetch(dissolved)
         .then(resp => resp.json())
         .then(data => {
@@ -67,11 +78,15 @@ function App() {
         })
 
 
+
+       
       map.current.addSource('countries', {
         type: 'geojson',
         data
       })
 
+
+      //add fill layer
       map.current.addLayer(
         {
           id: 'va',
@@ -95,6 +110,8 @@ function App() {
         }, firstSymbolId
       );
 
+
+      //add outlines of counties
       map.current.addLayer(
         {
           'id': 'outline',
@@ -120,8 +137,12 @@ function App() {
 
     map.current.on('mousemove', 'va', (e) => {
 
+      console.log(id)
      
       setCountyName(e.features[0].properties.Locality)
+      setPop2020(e.features[0].properties['2020pop'].toLocaleString())
+      setPop2010(e.features[0].properties['2010pop'].toLocaleString())
+      setPopChange(e.features[0].properties['NumCh2010'].toLocaleString())
 
     /*  new mapboxgl.Popup()
         .setLngLat(e.lngLat)
@@ -133,6 +154,9 @@ function App() {
     map.current.on('mouseout', 'va', (e) => {
 
       setCountyName()
+      setPop2020()
+      setPop2010()
+      setPopChange()
     
       
     }) 
@@ -144,6 +168,7 @@ function App() {
   function pop2020() {
 
     var id = '2020pop';
+    console.log(id)
 
     map.current.setPaintProperty('va', 'fill-color',
     [
@@ -162,7 +187,7 @@ function App() {
     [
       'interpolate',
       ['linear'],
-      ['get', '2020pop'],
+      ['get', id],
       0, "#d7d7d7",
       49448, '#A1ABC0',
       137739, '#6B80A9',
@@ -180,11 +205,16 @@ function App() {
 
   function pop2010(){
 
+
+    id = '2010pop'
+    console.log(id)
+
+
     map.current.setPaintProperty('va', 'fill-color',
     [
       'interpolate',
       ['linear'],
-      ['get', '2010pop'],
+      ['get', id],
       0, "#d7d7d7",
       46689, '#A1ABC0',
       122397, '#6B80A9',
@@ -197,7 +227,7 @@ function App() {
     [
       'interpolate',
       ['linear'],
-      ['get', '2010pop'],
+      ['get', id],
       0, "#d7d7d7",
       46689, '#A1ABC0',
       122397, '#6B80A9',
@@ -214,12 +244,13 @@ function App() {
   function popChangeSince2010() {
 
 
+    id = 'NumCh2010'
 
     map.current.setPaintProperty('va', 'fill-color',
     [
       'interpolate',
       ['linear'],
-      ['get', 'NumCh2010'],
+      ['get', id],
       -3647, "#ff350f",
       0, "#ccc",
       106379, '#00297b'
@@ -231,7 +262,7 @@ function App() {
     [
       'interpolate',
       ['linear'],
-      ['get', 'NumCh2010'],
+      ['get', id],
       -3647, "#ff350f",
       0, "#ccc",
       106379, '#00297b'
@@ -251,18 +282,20 @@ function App() {
     <div className="App">
       <div className="sidebar">
         <div className='words'>
-          {title} <br></br>
+          <b><h3>Map Currently Showing {title} </h3></b><br></br>
           County Name: {countyName} <br></br>
-          Population: <br></br>
+          Population 2020: {vpop2020} <br></br>
+          Population 2020: {vpop2010} <br></br>
+          Population Change: {vpopChange} <br></br>
           <div className='allButtons'>
             <button onClick={pop2020} className='button'>Population in 2020</button> <br></br>
             <button onClick={pop2010} className='button'>Population in 2010</button> <br></br>
             <button onClick={popChangeSince2010} className='button'>Pop change since 2010</button><br></br>
           </div> 
+
        </div>
       </div>
       <div ref={mapContainer} className="map-container" />
-      <footer>Made with React, Mapbox, and Turf.js</footer>
     </div>
   );
 }

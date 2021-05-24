@@ -1,7 +1,7 @@
 {
   "name": "vareact",
   "version": "0.1.0",
-  "homepage": "sebastian-ch.github.io/virginiaPopulation",
+  "homepage": "https://sebastian-ch.github.io/virginiaPopulation/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
