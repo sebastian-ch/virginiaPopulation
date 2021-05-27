@@ -15,7 +15,7 @@ function App() {
   const [lng, setLng] = useState(-79.1);
   const [lat, setLat] = useState(37.7);
   const [zoom, setZoom] = useState(6.5);
-  const [countyName, setCountyName] = useState();
+  const [countyName, setCountyName] = useState('Hover on a County to get data');
   const [title, setTitle] = useState('Population in 2020');
   const [vpop2020, setPop2020] = useState()
   const [vpop2010, setPop2010] = useState()
@@ -153,7 +153,7 @@ function App() {
 
     map.current.on('mouseout', 'va', (e) => {
 
-      setCountyName()
+      setCountyName('Hover on a County to get data')
       setPop2020()
       setPop2010()
       setPopChange()
@@ -258,8 +258,9 @@ function App() {
     ]);
 
 
-    map.current.setPaintProperty('outline', 'line-color',
-    [
+    map.current.setFilter('outline', ['==', 'Locality', 'Loudon County'])
+    map.current.setPaintProperty('outline', 'line-color', 'orange'
+    /*[
       'interpolate',
       ['linear'],
       ['get', id],
@@ -267,7 +268,11 @@ function App() {
       0, "#ccc",
       106379, '#00297b'
 
-    ]);
+    ] */
+    
+    
+    
+    );
 
 
 
